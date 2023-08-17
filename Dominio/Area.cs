@@ -2,15 +2,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dominio;
 
-public class Area
+public class Area : BaseEntity
 {
-    [Key]
-    public int Id_Area { get; set; }
     public ICollection<Place> ? Places { get; set; }
     public string ?Name_Area { get; set; }
     public ICollection<AreaUser> ? AreaUsers { get; set; }
 
-    public int  ?Description_Incidence { get; set; }
+    public int  ?Id_Description_Incidence { get; set; }
     public ICollection<Incidence> ? Incidences { get; set; }
 
 

@@ -2,11 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dominio;
 
-public class DetailIncidence
+public class DetailIncidence : BaseEntity
 {
-        [Key]
-        public int Id_DetailIncidence { get; set; }
-
+     
 
         public int Id_Incidence { get; set; }
         public Incidence ? Incidence { get; set; }

@@ -2,11 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dominio;
 
-public class Contact
+public class Contact : BaseEntity
 {
-    [Key]
-    public int Id_Contact { get; set; }
-
     public int Id_User { get; set; }
     public User ? User { get; set; }
 

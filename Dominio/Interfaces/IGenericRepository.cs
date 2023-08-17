@@ -1,9 +1,9 @@
-using System.Linq.Expressions;
+// using System.Linq.Expressions;
 
-namespace Dominio.Interfaces
-{
-    public interface IGenericRepository<T> where T : Basentity 
-    {
+// namespace Dominio.Interfaces
+// {
+//     public interface IGenericRepository<T> where T : //Basentity 
+//     {
         
-    }
-}
+//     }
+// }

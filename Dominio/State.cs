@@ -2,10 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dominio;
 
-public class State
+public class State : BaseEntity
 {
-    [Key]
-    public int Id_State { get; set; }
+ 
     public ICollection<DetailIncidence> ?DetailIncidences { get; set; }
 
      public DetailIncidence ? DetailIncidence { get; set; }

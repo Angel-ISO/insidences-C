@@ -2,10 +2,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dominio;
 
-public class User
+public class User : BaseEntity
 {
-    [Key]
-    public int Id_User { get; set; }
     public ICollection<Contact> ?Contacts { get; set; }
     public ICollection<AreaUser> ?AreaUsers { get; set; }
     public ICollection<Incidence> ?Incidences { get; set; }

@@ -5045,19 +5045,19 @@
     ]
   },
   "packageFolders": {
-    "/home/apolM01-041/.nuget/packages/": {}
+    "/home/angelgabriel/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj",
+      "projectUniqueName": "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj",
       "projectName": "Dominio",
-      "projectPath": "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj",
-      "packagesPath": "/home/apolM01-041/.nuget/packages/",
-      "outputPath": "/home/apolM01-041/Documents/insidences-C/Dominio/obj/",
+      "projectPath": "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj",
+      "packagesPath": "/home/angelgabriel/.nuget/packages/",
+      "outputPath": "/home/angelgabriel/Documentos/insidences-C/Dominio/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/apolM01-041/.nuget/NuGet/NuGet.Config"
+        "/home/angelgabriel/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"

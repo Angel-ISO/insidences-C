@@ -2,10 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dominio;
 
-public class DocumentType
+public class DocumentType : BaseEntity
 {
-    [Key]
-    public int Id_DocumentType { get; set; }
+    
     public string ?Name_DocumentType { get; set; }
     public ICollection<User> ?Users { get; set; }
     public Contact ? Contact { get; set; }

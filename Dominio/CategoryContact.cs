@@ -2,10 +2,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Dominio;
 
-public class CategoryContact
+public class CategoryContact : BaseEntity
 {
-    [Key]
-    public int Id_CategoryContact { get; set; }
+ 
     public Contact ? Contact { get; set; }
     public int Id_Category { get; set; }
     public string ?Name_CategoryContact { get; set; }
