@@ -1,5 +1,6 @@
 {
     "conventionalCommits.scopes": [
-        "base con migraciones definidas"
+        "base con migraciones definidas",
+        "web api base"
     ]
 }
