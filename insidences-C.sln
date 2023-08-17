@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsidenceAPI", "InsidenceAPI\InsidenceAPI.csproj", "{9DE1EE55-8160-401D-8212-BE833C988593}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacion", "Aplicacion\Aplicacion.csproj", "{9F1B349E-36DF-4C11-918B-74B89479D19F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,5 +36,9 @@ Global
 		{A1C7F837-50A1-482E-8E68-2BEB374BD683}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1C7F837-50A1-482E-8E68-2BEB374BD683}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1C7F837-50A1-482E-8E68-2BEB374BD683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F1B349E-36DF-4C11-918B-74B89479D19F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F1B349E-36DF-4C11-918B-74B89479D19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F1B349E-36DF-4C11-918B-74B89479D19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F1B349E-36DF-4C11-918B-74B89479D19F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

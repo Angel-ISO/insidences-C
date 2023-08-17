@@ -12,28 +12,28 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
         builder.ToTable("Areas");
 
             builder.Property(p => p.Id)
-                .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
-                .HasColumnName("Id_Area")
-                .HasColumnType("int")
-                .IsRequired();
+            .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn)
+            .HasColumnName("Id_Area")
+            .HasColumnType("int")
+            .IsRequired();
 
             builder.Property(p => p.Name_Area)
-                .HasColumnName("Namearea")
-                .HasColumnType("varchar")
-                .HasMaxLength(200)
-                .IsRequired();
+            .HasColumnName("Namearea")
+            .HasColumnType("varchar")
+            .HasMaxLength(200)
+            .IsRequired();
 
-                
+
             builder.Property(p => p.Description_Area)
-                .HasColumnName("Descriptionarea")
-                .HasColumnType("varchar")
-                .HasMaxLength(200)
-                .IsRequired();
+            .HasColumnName("Descriptionarea")
+            .HasColumnType("varchar")
+            .HasMaxLength(200)
+            .IsRequired();
 
 
             builder.Property(p => p.Id_Description_Incidence)
-                .HasColumnName("Id_desc_Incidence")
-                .HasColumnType("int")
-                .IsRequired();
+            .HasColumnName("Id_desc_Incidence")
+            .HasColumnType("int")
+            .IsRequired();
     }
 }

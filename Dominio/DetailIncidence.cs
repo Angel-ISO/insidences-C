@@ -6,7 +6,6 @@ public class DetailIncidence : BaseEntity
 {
      
 
-        public int Id_Incidence { get; set; }
         public Incidence ? Incidence { get; set; }
 
         public int Id_Peripheral { get; set; }
@@ -20,7 +19,6 @@ public class DetailIncidence : BaseEntity
 
         public int Id_State { get; set; }
          public State ? State { get; set; }
-
 
         public string ?Description_DetailIncidence { get; set; }
 }
