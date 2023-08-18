@@ -6,7 +6,7 @@ using Dominio;
 
 namespace Dominio.Interfaces;
 
-    public interface IRolRepository : IGenericRepository<Rol>
+    public interface IStateRepository : IGenericRepository<State>
     {
-  
+     
     }

@@ -7,9 +7,9 @@ using Dominio.Interfaces;
 using Persistencia;
 
 namespace Aplicacion.Repository;
-public class RolRepository : GenericRepository<Rol>, IRolRepository
+public class CategoryContactRepository : GenericRepository<CategoryContact>, ICategoryContactRepository
 {
-    public RolRepository(IncidenceContext context) : base(context)
+    public CategoryContactRepository(IncidenceContext context) : base(context)
     {
         
     }
