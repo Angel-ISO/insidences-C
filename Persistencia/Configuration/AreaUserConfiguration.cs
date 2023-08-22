@@ -19,17 +19,6 @@ public class AreaUserConfiguration : IEntityTypeConfiguration<AreaUser>
 
 
 
-                builder.Property(p => p.Id_Area)
-                .HasColumnName("Id_Area")
-                .HasColumnType("int")
-                .IsRequired();
-
-
-                builder.Property(p => p.Id_User)
-                .HasColumnName("Id_Area")
-                .HasColumnType("int")
-                .IsRequired();
-
 
 
 

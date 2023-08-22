@@ -1,6 +1,7 @@
 namespace Dominio.Interfaces;
 public interface IUnitOfWork
 {
+    IAddressRepository Addresses {get;}   
     IAreaRepository Areas {get;}     
     IAreaUserRepository AreaUsers {get;}        
     ICategoryContactRepository CategoryContacts {get;}      
@@ -15,6 +16,11 @@ public interface IUnitOfWork
     IStateRepository States {get;}   
     ITypeIncidenceRepository TypeIncidences {get;}   
     IUserRepository Users {get;}   
+    ICityRepository Cities {get;}   
+    IRegionRepository Regions {get;} 
+    ICountryRepository Countries {get;} 
+
+      
 
     Task<int> SaveAsync();
 }

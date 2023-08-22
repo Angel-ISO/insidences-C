@@ -23,6 +23,11 @@ public class IncidenceContext : DbContext {
         public DbSet<CategoryContact> ? CategoryContacts { get; set; }
         public DbSet<AreaUser> ? AreaUsers { get; set; }
         public DbSet<Area> ? Areas { get; set; }
+        public DbSet<Address> ? Addresses { get; set; }
+        public DbSet<City> ? Cities { get; set; }
+        public DbSet<Region> ? Regions { get; set; }
+        public DbSet<Country> ? Countries { get; set; }
+
         
 
        protected override void OnModelCreating(ModelBuilder modelBuilder)

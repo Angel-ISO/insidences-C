@@ -5,7 +5,7 @@ namespace Dominio;
 public class Area : BaseEntity
 {
     public ICollection<Place> ? Places { get; set; }
-    public string ?Name_Area { get; set; }
+    public int ?Id_AreaU { get; set; }
     public ICollection<AreaUser> ? AreaUsers { get; set; }
 
     public int  ?Id_Description_Incidence { get; set; }

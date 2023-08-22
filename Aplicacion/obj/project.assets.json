@@ -5236,19 +5236,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pc\\.nuget\\packages\\": {}
+    "/home/apolM01-041/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\pc\\Documents\\insidences-C\\Aplicacion\\Aplicacion.csproj",
+      "projectUniqueName": "/home/apolM01-041/Documents/insidences-C/Aplicacion/Aplicacion.csproj",
       "projectName": "Aplicacion",
-      "projectPath": "c:\\Users\\pc\\Documents\\insidences-C\\Aplicacion\\Aplicacion.csproj",
-      "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\pc\\Documents\\insidences-C\\Aplicacion\\obj\\",
+      "projectPath": "/home/apolM01-041/Documents/insidences-C/Aplicacion/Aplicacion.csproj",
+      "packagesPath": "/home/apolM01-041/.nuget/packages/",
+      "outputPath": "/home/apolM01-041/Documents/insidences-C/Aplicacion/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/apolM01-041/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -5260,11 +5260,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "c:\\Users\\pc\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
-              "projectPath": "c:\\Users\\pc\\Documents\\insidences-C\\Dominio\\Dominio.csproj"
+            "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj": {
+              "projectPath": "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj"
             },
-            "c:\\Users\\pc\\Documents\\insidences-C\\Persistencia\\Persistencia.csproj": {
-              "projectPath": "c:\\Users\\pc\\Documents\\insidences-C\\Persistencia\\Persistencia.csproj"
+            "/home/apolM01-041/Documents/insidences-C/Persistencia/Persistencia.csproj": {
+              "projectPath": "/home/apolM01-041/Documents/insidences-C/Persistencia/Persistencia.csproj"
             }
           }
         }
@@ -5300,7 +5300,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -30,12 +30,7 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .HasMaxLength(150)
             .IsRequired();
 
-            builder.Property(p => p.Address_User)
-            .HasColumnName("Adress_User")
-            .HasColumnType("varchar")
-            .HasMaxLength(150)
-            .IsRequired();
-
+           
             builder.Property(p => p.Id_DocumentType)
             .HasColumnName("Id_DocumentType")
             .HasColumnType("int")

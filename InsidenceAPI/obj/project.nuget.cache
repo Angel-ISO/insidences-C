@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "BVbGbXiHshAR3wgLQBJBNaPpS2lWONBvLPdrsdmFKljrYzycAezi4Lf7HpO6DKT55brndyJAXvbzp7Qn2YvajA==",
+  "dgSpecHash": "x9YWG664h7qFZGEY1h3OTDDGrxQz9sWyoOTo15m1+PTBlGcJnY+Wniv3sKRYr5bNE3npxHSUhWlEGeV3ZbgxYw==",
   "success": true,
   "projectFilePath": "/home/apolM01-041/Documents/insidences-C/InsidenceAPI/InsidenceAPI.csproj",
   "expectedPackageFiles": [
+    "/home/apolM01-041/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
+    "/home/apolM01-041/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "/home/apolM01-041/.nuget/packages/fluentvalidation/11.5.1/fluentvalidation.11.5.1.nupkg.sha512",
     "/home/apolM01-041/.nuget/packages/fluentvalidation.aspnetcore/11.3.0/fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
     "/home/apolM01-041/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.5.1/fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
@@ -14,7 +16,7 @@
     "/home/apolM01-041/.nuget/packages/itext7.pdfhtml/5.0.1/itext7.pdfhtml.5.0.1.nupkg.sha512",
     "/home/apolM01-041/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/7.0.10/microsoft.aspnetcore.authentication.jwtbearer.7.0.10.nupkg.sha512",
     "/home/apolM01-041/.nuget/packages/microsoft.aspnetcore.openapi/7.0.10/microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
-    "/home/apolM01-041/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/home/apolM01-041/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/apolM01-041/.nuget/packages/microsoft.dotnet.platformabstractions/1.1.0/microsoft.dotnet.platformabstractions.1.1.0.nupkg.sha512",
     "/home/apolM01-041/.nuget/packages/microsoft.entityframeworkcore/7.0.10/microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
     "/home/apolM01-041/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.10/microsoft.entityframeworkcore.abstractions.7.0.10.nupkg.sha512",

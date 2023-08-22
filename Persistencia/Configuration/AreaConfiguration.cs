@@ -17,10 +17,9 @@ public class AreaConfiguration : IEntityTypeConfiguration<Area>
             .HasColumnType("int")
             .IsRequired();
 
-            builder.Property(p => p.Name_Area)
+            builder.Property(p => p.Id_AreaU)
             .HasColumnName("Namearea")
-            .HasColumnType("varchar")
-            .HasMaxLength(200)
+            .HasColumnType("int")
             .IsRequired();
 
 
