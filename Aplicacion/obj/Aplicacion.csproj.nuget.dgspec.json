@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/angelgabriel/Documentos/insidences-C/Aplicacion/Aplicacion.csproj": {}
+    "/home/apolM01-041/Documents/insidences-C/Aplicacion/Aplicacion.csproj": {}
   },
   "projects": {
-    "/home/angelgabriel/Documentos/insidences-C/Aplicacion/Aplicacion.csproj": {
+    "/home/apolM01-041/Documents/insidences-C/Aplicacion/Aplicacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/angelgabriel/Documentos/insidences-C/Aplicacion/Aplicacion.csproj",
+        "projectUniqueName": "/home/apolM01-041/Documents/insidences-C/Aplicacion/Aplicacion.csproj",
         "projectName": "Aplicacion",
-        "projectPath": "/home/angelgabriel/Documentos/insidences-C/Aplicacion/Aplicacion.csproj",
-        "packagesPath": "/home/angelgabriel/.nuget/packages/",
-        "outputPath": "/home/angelgabriel/Documentos/insidences-C/Aplicacion/obj/",
+        "projectPath": "/home/apolM01-041/Documents/insidences-C/Aplicacion/Aplicacion.csproj",
+        "packagesPath": "/home/apolM01-041/.nuget/packages/",
+        "outputPath": "/home/apolM01-041/Documents/insidences-C/Aplicacion/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/angelgabriel/.nuget/NuGet/NuGet.Config"
+          "/home/apolM01-041/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -26,11 +26,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj": {
-                "projectPath": "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj"
+              "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj": {
+                "projectPath": "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj"
               },
-              "/home/angelgabriel/Documentos/insidences-C/Persistencia/Persistencia.csproj": {
-                "projectPath": "/home/angelgabriel/Documentos/insidences-C/Persistencia/Persistencia.csproj"
+              "/home/apolM01-041/Documents/insidences-C/Persistencia/Persistencia.csproj": {
+                "projectPath": "/home/apolM01-041/Documents/insidences-C/Persistencia/Persistencia.csproj"
               }
             }
           }
@@ -64,17 +64,17 @@
         }
       }
     },
-    "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj": {
+    "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj",
+        "projectUniqueName": "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj",
-        "packagesPath": "/home/angelgabriel/.nuget/packages/",
-        "outputPath": "/home/angelgabriel/Documentos/insidences-C/Dominio/obj/",
+        "projectPath": "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj",
+        "packagesPath": "/home/apolM01-041/.nuget/packages/",
+        "outputPath": "/home/apolM01-041/Documents/insidences-C/Dominio/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/angelgabriel/.nuget/NuGet/NuGet.Config"
+          "/home/apolM01-041/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -131,17 +131,17 @@
         }
       }
     },
-    "/home/angelgabriel/Documentos/insidences-C/Persistencia/Persistencia.csproj": {
+    "/home/apolM01-041/Documents/insidences-C/Persistencia/Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/angelgabriel/Documentos/insidences-C/Persistencia/Persistencia.csproj",
+        "projectUniqueName": "/home/apolM01-041/Documents/insidences-C/Persistencia/Persistencia.csproj",
         "projectName": "Persistencia",
-        "projectPath": "/home/angelgabriel/Documentos/insidences-C/Persistencia/Persistencia.csproj",
-        "packagesPath": "/home/angelgabriel/.nuget/packages/",
-        "outputPath": "/home/angelgabriel/Documentos/insidences-C/Persistencia/obj/",
+        "projectPath": "/home/apolM01-041/Documents/insidences-C/Persistencia/Persistencia.csproj",
+        "packagesPath": "/home/apolM01-041/.nuget/packages/",
+        "outputPath": "/home/apolM01-041/Documents/insidences-C/Persistencia/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/angelgabriel/.nuget/NuGet/NuGet.Config"
+          "/home/apolM01-041/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -153,8 +153,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj": {
-                "projectPath": "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj"
+              "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj": {
+                "projectPath": "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj"
               }
             }
           }

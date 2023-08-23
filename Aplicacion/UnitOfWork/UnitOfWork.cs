@@ -8,7 +8,8 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 
     private readonly IncidenceContext _context;
     AddressRepository _Address;
-     private AreaRepository _Area;
+    private AreaRepository _Area;
+    private ContactTypeRepository _ContactType;
     private AreaUserRepository _AreaUser;
     private CategoryContactRepository _CategoryContact;
     private CityRepository _City;
@@ -46,6 +47,18 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     }
 
 
+    public IContactTypeRepository ContactTypes
+    {
+        get
+        {
+            if (_ContactType is not null)
+            {
+                return _ContactType;
+            }
+            return _ContactType = new ContactTypeRepository(_context);
+        }
+    }
+
 
     public IDetailIncidenceRepository DetailIncidences
     {
@@ -71,8 +84,6 @@ public class UnitOfWork : IUnitOfWork, IDisposable
             return _Area = new AreaRepository(_context);
         }
     }
-
-    IAreaRepository IUnitOfWork.Areas => throw new NotImplementedException();
 
     public IAreaUserRepository AreaUsers
     {
@@ -259,5 +270,4 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     public async Task<int> SaveAsync(){
         return await _context.SaveChangesAsync();
     }
-
 }

@@ -14,7 +14,7 @@ public static class ApplicationServiceExtension
         {
             options.AddPolicy("CorsPolicy", builder =>
                builder.AllowAnyOrigin()    //WithOrigins("https://domini.com")
-               .AllowAnyMethod()           //WithMethods(*GET", "POST")
+               .AllowAnyMethod()           //WithMethods(*GET", "POST", "PUT", "DELETE")
                .AllowAnyHeader());         //WithHeaders(*accept*, "content-type")
         });  
 
@@ -24,6 +24,6 @@ public static class ApplicationServiceExtension
         // services.AddScoped<IGenreInterface, GenreRepository>();
         // services.AddScoped<IDirectorInterface, DirectorRepository>();
          services.AddScoped<IUnitOfWork, UnitOfWork>();
-        services.AddAutoMapper(typeof(ApplicationServiceExtension));
+         services.AddAutoMapper(typeof(ApplicationServiceExtension));
      }
 }

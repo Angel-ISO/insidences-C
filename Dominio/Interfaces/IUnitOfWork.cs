@@ -7,6 +7,8 @@ public interface IUnitOfWork
     ICategoryContactRepository CategoryContacts {get;}      
     IContactRepository Contacts {get;}   
     IDetailIncidenceRepository DetailIncidences {get;}   
+    IContactTypeRepository ContactTypes {get;}   
+
     IDocumentTypeRepository DocumentTypes {get;}   
     IIncidenceRepository Incidences  {get;}   
     ILevelIncidenceRepository LevelIncidences {get;}   
@@ -21,6 +23,5 @@ public interface IUnitOfWork
     ICountryRepository Countries {get;} 
 
       
-
     Task<int> SaveAsync();
 }

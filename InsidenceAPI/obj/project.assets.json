@@ -5942,19 +5942,19 @@
     ]
   },
   "packageFolders": {
-    "/home/angelgabriel/.nuget/packages/": {}
+    "/home/apolM01-041/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/angelgabriel/Documentos/insidences-C/InsidenceAPI/InsidenceAPI.csproj",
+      "projectUniqueName": "/home/apolM01-041/Documents/insidences-C/InsidenceAPI/InsidenceAPI.csproj",
       "projectName": "InsidenceAPI",
-      "projectPath": "/home/angelgabriel/Documentos/insidences-C/InsidenceAPI/InsidenceAPI.csproj",
-      "packagesPath": "/home/angelgabriel/.nuget/packages/",
-      "outputPath": "/home/angelgabriel/Documentos/insidences-C/InsidenceAPI/obj/",
+      "projectPath": "/home/apolM01-041/Documents/insidences-C/InsidenceAPI/InsidenceAPI.csproj",
+      "packagesPath": "/home/apolM01-041/.nuget/packages/",
+      "outputPath": "/home/apolM01-041/Documents/insidences-C/InsidenceAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/angelgabriel/.nuget/NuGet/NuGet.Config"
+        "/home/apolM01-041/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -5966,8 +5966,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/angelgabriel/Documentos/insidences-C/Aplicacion/Aplicacion.csproj": {
-              "projectPath": "/home/angelgabriel/Documentos/insidences-C/Aplicacion/Aplicacion.csproj"
+            "/home/apolM01-041/Documents/insidences-C/Aplicacion/Aplicacion.csproj": {
+              "projectPath": "/home/apolM01-041/Documents/insidences-C/Aplicacion/Aplicacion.csproj"
             }
           }
         }
