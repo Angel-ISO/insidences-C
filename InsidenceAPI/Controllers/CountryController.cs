@@ -7,13 +7,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers;
 
- public class GenreController : BaseApiController
+ public class CountryController : BaseApiController
 {
 
      private readonly IUnitOfWork unitofwork;
      private readonly IMapper mapper;
 
-    public GenreController(IUnitOfWork unitOfWork, IMapper mapper)
+    public CountryController(IUnitOfWork unitOfWork, IMapper mapper)
     {
         this.unitofwork = unitOfWork;
         this.mapper = mapper;
@@ -27,7 +27,7 @@ namespace API.Controllers;
         var Gen = await  unitofwork.Countries.GetAllAsync();
         return Ok(Gen);
     }
-     [HttpGet("id")]
+     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
       public async Task<IActionResult> Get(int id)

@@ -5,6 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/insidencias/[controller]")]
 public class BaseApiController : ControllerBase {
 }

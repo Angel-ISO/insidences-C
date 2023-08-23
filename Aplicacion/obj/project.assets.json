@@ -5231,24 +5231,23 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Dominio >= 1.0.0",
-      "Microsoft.EntityFrameworkCore >= 7.0.10",
       "Persistencia >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "/home/apolM01-041/.nuget/packages/": {}
+    "/home/angelgabriel/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/apolM01-041/Documents/insidences-C/Aplicacion/Aplicacion.csproj",
+      "projectUniqueName": "/home/angelgabriel/Documentos/insidences-C/Aplicacion/Aplicacion.csproj",
       "projectName": "Aplicacion",
-      "projectPath": "/home/apolM01-041/Documents/insidences-C/Aplicacion/Aplicacion.csproj",
-      "packagesPath": "/home/apolM01-041/.nuget/packages/",
-      "outputPath": "/home/apolM01-041/Documents/insidences-C/Aplicacion/obj/",
+      "projectPath": "/home/angelgabriel/Documentos/insidences-C/Aplicacion/Aplicacion.csproj",
+      "packagesPath": "/home/angelgabriel/.nuget/packages/",
+      "outputPath": "/home/angelgabriel/Documentos/insidences-C/Aplicacion/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/apolM01-041/.nuget/NuGet/NuGet.Config"
+        "/home/angelgabriel/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -5260,11 +5259,11 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj": {
-              "projectPath": "/home/apolM01-041/Documents/insidences-C/Dominio/Dominio.csproj"
+            "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj": {
+              "projectPath": "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj"
             },
-            "/home/apolM01-041/Documents/insidences-C/Persistencia/Persistencia.csproj": {
-              "projectPath": "/home/apolM01-041/Documents/insidences-C/Persistencia/Persistencia.csproj"
+            "/home/angelgabriel/Documentos/insidences-C/Persistencia/Persistencia.csproj": {
+              "projectPath": "/home/angelgabriel/Documentos/insidences-C/Persistencia/Persistencia.csproj"
             }
           }
         }
@@ -5278,12 +5277,6 @@
     "frameworks": {
       "net7.0": {
         "targetAlias": "net7.0",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[7.0.10, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",

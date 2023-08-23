@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Aplicacion.UnitOfWork;
+using Dominio.Interfaces;
 
 namespace InsidenceAPI.Extensions;
 
@@ -15,4 +17,13 @@ public static class ApplicationServiceExtension
                .AllowAnyMethod()           //WithMethods(*GET", "POST")
                .AllowAnyHeader());         //WithHeaders(*accept*, "content-type")
         });  
+
+         public static void AddAplicationService(this IServiceCollection services)
+     {
+        // services.AddScoped<IMoviesInterface, MovieRepository>();
+        // services.AddScoped<IGenreInterface, GenreRepository>();
+        // services.AddScoped<IDirectorInterface, DirectorRepository>();
+         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddAutoMapper(typeof(ApplicationServiceExtension));
+     }
 }
