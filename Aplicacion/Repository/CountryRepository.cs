@@ -11,6 +11,11 @@ public class CountryRepository : GenericRepository<Country>, ICountryRepository
 {
     public CountryRepository(IncidenceContext context) : base(context)
     {
-        
+        _context = context;
+    }
+    public override <IEnumerable<Country>> GetAllAsync()
+    {
+        return await _context.Countries.Include(p => p.Regions)
+        .ToListAsync();
     }
 }
