@@ -28,3 +28,18 @@
 /home/angelgabriel/Documentos/insidences-C/Persistencia/obj/Debug/net7.0/refint/Persistencia.dll
 /home/angelgabriel/Documentos/insidences-C/Persistencia/obj/Debug/net7.0/Persistencia.pdb
 /home/angelgabriel/Documentos/insidences-C/Persistencia/obj/Debug/net7.0/ref/Persistencia.dll
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\bin\Debug\net7.0\Persistencia.deps.json
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\bin\Debug\net7.0\Persistencia.dll
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\bin\Debug\net7.0\Persistencia.pdb
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\bin\Debug\net7.0\Dominio.dll
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\bin\Debug\net7.0\Dominio.pdb
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\obj\Debug\net7.0\Persistencia.csproj.AssemblyReference.cache
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\obj\Debug\net7.0\Persistencia.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\obj\Debug\net7.0\Persistencia.AssemblyInfoInputs.cache
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\obj\Debug\net7.0\Persistencia.AssemblyInfo.cs
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\obj\Debug\net7.0\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\obj\Debug\net7.0\Persistencia.csproj.CopyComplete
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\obj\Debug\net7.0\Persistencia.dll
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\obj\Debug\net7.0\refint\Persistencia.dll
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\obj\Debug\net7.0\Persistencia.pdb
+C:\Users\Angel Ortega\Documents\insidences-C\Persistencia\obj\Debug\net7.0\ref\Persistencia.dll

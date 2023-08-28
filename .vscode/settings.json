@@ -3,5 +3,6 @@
         "base con migraciones definidas",
         "web api base",
         "ApiMethods"
-    ]
+    ],
+    "dotnet.defaultSolution": "insidences-C.sln"
 }

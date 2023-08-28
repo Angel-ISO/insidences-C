@@ -1,4 +1,5 @@
 using System.Reflection;
+using AspNetCoreRateLimit;
 using InsidenceAPI.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Persistencia;
@@ -13,10 +14,12 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.ConfigureCors();
 builder.Services.AddAplicationService();
+builder.Services.ConfigureRateLimiting();
+builder.Services.ConfigureApiVersioning();
 
 builder.Services.AddDbContext<IncidenceContext>(options =>
 {
-    string  connectionString = builder.Configuration.GetConnectionString("ConexDb");
+    string  connectionString = builder.Configuration.GetConnectionString("ConexHome");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
@@ -30,6 +33,7 @@ if (app.Environment.IsDevelopment())
 }
 
 
+app.UseIpRateLimiting();
 
 app.UseHttpsRedirection();
 

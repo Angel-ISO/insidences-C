@@ -32,3 +32,20 @@
 /home/angelgabriel/Documentos/insidences-C/Aplicacion/obj/Debug/net7.0/refint/Aplicacion.dll
 /home/angelgabriel/Documentos/insidences-C/Aplicacion/obj/Debug/net7.0/Aplicacion.pdb
 /home/angelgabriel/Documentos/insidences-C/Aplicacion/obj/Debug/net7.0/ref/Aplicacion.dll
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\bin\Debug\net7.0\Aplicacion.deps.json
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\bin\Debug\net7.0\Aplicacion.dll
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\bin\Debug\net7.0\Aplicacion.pdb
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\bin\Debug\net7.0\Dominio.dll
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\bin\Debug\net7.0\Persistencia.dll
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\bin\Debug\net7.0\Dominio.pdb
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\bin\Debug\net7.0\Persistencia.pdb
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\obj\Debug\net7.0\Aplicacion.csproj.AssemblyReference.cache
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\obj\Debug\net7.0\Aplicacion.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\obj\Debug\net7.0\Aplicacion.AssemblyInfoInputs.cache
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\obj\Debug\net7.0\Aplicacion.AssemblyInfo.cs
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\obj\Debug\net7.0\Aplicacion.csproj.CoreCompileInputs.cache
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\obj\Debug\net7.0\Aplicacion.csproj.CopyComplete
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\obj\Debug\net7.0\Aplicacion.dll
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\obj\Debug\net7.0\refint\Aplicacion.dll
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\obj\Debug\net7.0\Aplicacion.pdb
+C:\Users\Angel Ortega\Documents\insidences-C\Aplicacion\obj\Debug\net7.0\ref\Aplicacion.dll

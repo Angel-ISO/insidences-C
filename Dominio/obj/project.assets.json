@@ -5045,19 +5045,19 @@
     ]
   },
   "packageFolders": {
-    "/home/angelgabriel/.nuget/packages/": {}
+    "C:\\Users\\Angel Ortega\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj",
+      "projectUniqueName": "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
       "projectName": "Dominio",
-      "projectPath": "/home/angelgabriel/Documentos/insidences-C/Dominio/Dominio.csproj",
-      "packagesPath": "/home/angelgabriel/.nuget/packages/",
-      "outputPath": "/home/angelgabriel/Documentos/insidences-C/Dominio/obj/",
+      "projectPath": "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
+      "packagesPath": "C:\\Users\\Angel Ortega\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/angelgabriel/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Angel Ortega\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -5110,7 +5110,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.110/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

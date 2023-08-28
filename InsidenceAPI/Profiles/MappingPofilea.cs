@@ -5,9 +5,14 @@ using AutoMapper;
 
 
 
-namespace InsidenceAPI.Profiles
+namespace InsidenceAPI.Profiles;
 
-    public class MappingPofiles
+    public class MappingPofiles : Profile
     {
-        
+      public MappingPofiles(){
+        CreateMap<Country, CountryDto>().ReverseMap().ForMember(o => o.Regions,d => d.Ignore());
+        CreateMap<Region, RegionDto>().ReverseMap();
+
+        CreateMap<Country, CountryXRegDto>().ReverseMap();
+      }
     }
