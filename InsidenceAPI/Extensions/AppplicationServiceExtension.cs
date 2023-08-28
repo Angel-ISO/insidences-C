@@ -61,7 +61,10 @@ public static class ApplicationServiceExtension
 
         Options.DefaultApiVersion = new ApiVersion(1, 0);
         Options.AssumeDefaultVersionWhenUnspecified = true;
-        Options.ApiVersionReader = new QueryStringApiVersionReader("ver");
+        Options.ApiVersionReader = ApiVersionReader.Combine(
+          new QueryStringApiVersionReader("ver"),
+          new HeaderApiVersionReader ("X-Version")
+        );
 
      });
     }
