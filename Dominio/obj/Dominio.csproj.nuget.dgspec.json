@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {}
+    "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
+    "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
+        "projectPath": "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\Angel Ortega\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\obj\\",
+        "outputPath": "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Angel Ortega\\AppData\\Roaming\\NuGet\\NuGet.Config"

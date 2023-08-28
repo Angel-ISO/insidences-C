@@ -2,7 +2,8 @@
     "conventionalCommits.scopes": [
         "base con migraciones definidas",
         "web api base",
-        "ApiMethods"
+        "ApiMethods",
+        "Dtos flow of data"
     ],
     "dotnet.defaultSolution": "insidences-C.sln"
 }
