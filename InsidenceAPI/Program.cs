@@ -27,7 +27,7 @@ builder.Services.ConfigureApiVersioning();
 
 builder.Services.AddDbContext<IncidenceContext>(options =>
 {
-    string  connectionString = builder.Configuration.GetConnectionString("ConexNew");
+    string  connectionString = builder.Configuration.GetConnectionString("ConexHome");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 

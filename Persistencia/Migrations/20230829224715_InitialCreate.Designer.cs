@@ -12,7 +12,7 @@ using Persistencia;
 namespace Persistencia.Migrations
 {
     [DbContext(typeof(IncidenceContext))]
-    [Migration("20230822123600_InitialCreate")]
+    [Migration("20230829224715_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -574,6 +574,12 @@ namespace Persistencia.Migrations
                         .HasColumnName("Id_User")
                         .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("varchar")
+                        .HasColumnName("Email");
+
                     b.Property<int>("Id_DocumentType")
                         .HasColumnType("int")
                         .HasColumnName("Id_DocumentType");
@@ -593,13 +599,36 @@ namespace Persistencia.Migrations
                         .HasColumnType("varchar")
                         .HasColumnName("NameUser");
 
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("varchar")
+                        .HasColumnName("Password");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Id_DocumentType");
 
-                    b.HasIndex("Id_Rol");
+                    b.HasIndex("Name_User", "Email")
+                        .IsUnique()
+                        .HasDatabaseName("IX-MiIndice");
 
                     b.ToTable("User", (string)null);
+                });
+
+            modelBuilder.Entity("Dominio.UserRol", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RolId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserId", "RolId");
+
+                    b.HasIndex("RolId");
+
+                    b.ToTable("UserRol");
                 });
 
             modelBuilder.Entity("Dominio.Address", b =>
@@ -810,15 +839,26 @@ namespace Persistencia.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("DocumentType");
+                });
+
+            modelBuilder.Entity("Dominio.UserRol", b =>
+                {
                     b.HasOne("Dominio.Rol", "Rol")
-                        .WithMany("Users")
-                        .HasForeignKey("Id_Rol")
+                        .WithMany("UserRols")
+                        .HasForeignKey("RolId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("DocumentType");
+                    b.HasOne("Dominio.User", "User")
+                        .WithMany("UserRols")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Rol");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Dominio.Area", b =>
@@ -882,7 +922,7 @@ namespace Persistencia.Migrations
 
             modelBuilder.Entity("Dominio.Rol", b =>
                 {
-                    b.Navigation("Users");
+                    b.Navigation("UserRols");
                 });
 
             modelBuilder.Entity("Dominio.State", b =>
@@ -906,6 +946,8 @@ namespace Persistencia.Migrations
                     b.Navigation("Contacts");
 
                     b.Navigation("Incidences");
+
+                    b.Navigation("UserRols");
                 });
 #pragma warning restore 612, 618
         }

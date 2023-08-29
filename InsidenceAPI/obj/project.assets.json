@@ -6022,11 +6022,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\InsidenceAPI\\InsidenceAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\InsidenceAPI\\InsidenceAPI.csproj",
       "projectName": "InsidenceAPI",
-      "projectPath": "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\InsidenceAPI\\InsidenceAPI.csproj",
+      "projectPath": "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\InsidenceAPI\\InsidenceAPI.csproj",
       "packagesPath": "C:\\Users\\Angel Ortega\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\InsidenceAPI\\obj\\",
+      "outputPath": "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\InsidenceAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Angel Ortega\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6041,8 +6041,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\Aplicacion\\Aplicacion.csproj": {
-              "projectPath": "c:\\Users\\Angel Ortega\\Documents\\insidences-C\\Aplicacion\\Aplicacion.csproj"
+            "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\Aplicacion\\Aplicacion.csproj": {
+              "projectPath": "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\Aplicacion\\Aplicacion.csproj"
             }
           }
         }

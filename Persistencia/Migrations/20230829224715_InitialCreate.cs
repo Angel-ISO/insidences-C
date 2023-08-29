@@ -318,7 +318,11 @@ namespace Persistencia.Migrations
                     LastNameUser = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Id_DocumentType = table.Column<int>(type: "int", nullable: false),
-                    Id_Rol = table.Column<int>(type: "int", nullable: false)
+                    Id_Rol = table.Column<int>(type: "int", nullable: false),
+                    Password = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Email = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
@@ -329,11 +333,30 @@ namespace Persistencia.Migrations
                         principalTable: "DocumentType",
                         principalColumn: "Id_DocumentType",
                         onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "UserRol",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    RolId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserRol", x => new { x.UserId, x.RolId });
                     table.ForeignKey(
-                        name: "FK_User_Rol_Id_Rol",
-                        column: x => x.Id_Rol,
+                        name: "FK_UserRol_Rol_RolId",
+                        column: x => x.RolId,
                         principalTable: "Rol",
                         principalColumn: "Id_Rol",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserRol_User_UserId",
+                        column: x => x.UserId,
+                        principalTable: "User",
+                        principalColumn: "Id_User",
                         onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
@@ -563,9 +586,15 @@ namespace Persistencia.Migrations
                 column: "Id_DocumentType");
 
             migrationBuilder.CreateIndex(
-                name: "IX_User_Id_Rol",
+                name: "IX-MiIndice",
                 table: "User",
-                column: "Id_Rol");
+                columns: new[] { "NameUser", "Email" },
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserRol_RolId",
+                table: "UserRol",
+                column: "RolId");
 
             migrationBuilder.AddForeignKey(
                 name: "FK_addresses_User_Id_Pa",
@@ -660,7 +689,13 @@ namespace Persistencia.Migrations
                 name: "Peripheral");
 
             migrationBuilder.DropTable(
+                name: "UserRol");
+
+            migrationBuilder.DropTable(
                 name: "cities");
+
+            migrationBuilder.DropTable(
+                name: "Rol");
 
             migrationBuilder.DropTable(
                 name: "regions");
@@ -673,9 +708,6 @@ namespace Persistencia.Migrations
 
             migrationBuilder.DropTable(
                 name: "DocumentType");
-
-            migrationBuilder.DropTable(
-                name: "Rol");
 
             migrationBuilder.DropTable(
                 name: "Areas");

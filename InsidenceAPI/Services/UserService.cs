@@ -1,4 +1,4 @@
-using Dominio;
+/* using Dominio;
 using Dominio.Interfaces;
 using InsidenceAPI.Dtos;
 using InsidenceAPI.Helpers;
@@ -131,3 +131,4 @@ namespace InsidenceAPI.Services;
 
     }
 
+ */
