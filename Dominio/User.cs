@@ -13,5 +13,10 @@ public class User : BaseEntity
     public int Id_DocumentType { get; set; }
     public DocumentType ? DocumentType { get; set; }
     public int Id_Rol { get; set; }
-    public Rol ? Rol { get; set; }
+    public ICollection<Rol> ?Rols { get; set; } = new HashSet<Rol>();
+    public ICollection<UserRol> ?UserRols { get; set; } 
+
+    public string ?Password { get; set; }
+    
+    public string ?Email { get; set; }
 }

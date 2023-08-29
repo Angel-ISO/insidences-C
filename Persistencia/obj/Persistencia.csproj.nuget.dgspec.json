@@ -4,14 +4,14 @@
     "C:\\Users\\APM01-041\\Documents\\insidences-C\\Persistencia\\Persistencia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
+    "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
+        "projectPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\APM01-041\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\obj\\",
+        "outputPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\APM01-041\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -93,8 +93,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
-                "projectPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj"
+              "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
+                "projectPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj"
               }
             }
           }
