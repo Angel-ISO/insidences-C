@@ -3,7 +3,8 @@
         "base con migraciones definidas",
         "web api base",
         "ApiMethods",
-        "Dtos flow of data"
+        "Dtos flow of data",
+        "autentications"
     ],
     "dotnet.defaultSolution": "insidences-C.sln"
 }
