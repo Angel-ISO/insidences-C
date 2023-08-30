@@ -32,6 +32,17 @@ namespace API.Controllers;
         return _mapper.Map<List<RegionDto>>(Con);
     }
 
+
+    [HttpGet]
+    [MapToApiVersion("1.1")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<RegionxCityDto>>> Get11()
+    {
+        var Con = await  _unitofwork.Regions.GetAllAsync();
+        return _mapper.Map<List<RegionxCityDto>>(Con);
+    }
+
      [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -40,6 +51,8 @@ namespace API.Controllers;
         var byidC = await  _unitofwork.Regions.GetByIdAsync(id);
         return Ok(byidC);
     }
+
+
 
 
     [HttpPost]

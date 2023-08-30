@@ -2,11 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Aplicacion.Contratos;
 using Aplicacion.UnitOfWork;
 using AspNetCoreRateLimit;
+using Dominio;
 using Dominio.Interfaces;
+using InsidenceAPI.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Segurity.SegurityToken;
 
 namespace InsidenceAPI.Extensions;
 
@@ -26,8 +31,11 @@ public static class ApplicationServiceExtension
         // services.AddScoped<IMoviesInterface, MovieRepository>();
         // services.AddScoped<IGenreInterface, GenreRepository>();
         // services.AddScoped<IDirectorInterface, DirectorRepository>();
-         services.AddScoped<IUnitOfWork, UnitOfWork>();
-         services.AddAutoMapper(typeof(ApplicationServiceExtension));
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddAutoMapper(typeof(ApplicationServiceExtension));
+        services.AddScoped<IJwtGenerator,JwtGenerator>();
+        services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+        services.AddScoped<IUserService, UserService>();
      }
 
 

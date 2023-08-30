@@ -1,4 +1,4 @@
-/* using Dominio;
+using Dominio;
 using Dominio.Interfaces;
 using InsidenceAPI.Dtos;
 using InsidenceAPI.Helpers;
@@ -26,10 +26,10 @@ namespace InsidenceAPI.Services;
             _unitOfWork = unitOfWork;
             _jwt = jwt.Value;
             _PasswordHasher = passwordHasher;
-            _JwtGenerator = jwtGenerator;
+            _jwtGenerator = jwtGenerator;
 
         } 
-        public async Task<String> RegisterAsync(RegisterDto registerDto)
+        public async Task<String> RegistrerAsync(RegisterDto registerDto)
         {
             var user = new User
             {
@@ -98,7 +98,7 @@ namespace InsidenceAPI.Services;
     }
 
 
-            public async Task<DatosUsuarioDto> GetTokenAsync(LoginDto model)
+    public async Task<DatosUsuarioDto> GetTokenAsync(LoginDto model)
     {
         DatosUsuarioDto datosUsuarioDto = new DatosUsuarioDto();
         var usuario = await _unitOfWork.Users
@@ -118,7 +118,7 @@ namespace InsidenceAPI.Services;
             datosUsuarioDto.EstaAutenticado = true;
             datosUsuarioDto.UserName = usuario.Name_User;
             datosUsuarioDto.Email = usuario.Name_User;
-            datosUsuarioDto.Token = _jwtGenerador.CrearToken(usuario);
+            datosUsuarioDto.Token = _jwtGenerator.CrearToken(usuario);
             return datosUsuarioDto;
 
         }
@@ -127,8 +127,48 @@ namespace InsidenceAPI.Services;
         return datosUsuarioDto;
 
     }
+        
 
-
+    /*     private JwtSecurityToken CreateJwtToken(User user)
+    {
+        var roles = user.Rols;
+        var roleClaims = new List<Claim>();
+        foreach (var role in roles)
+        {
+            roleClaims.Add(new Claim("roles", role.Name_Rol));
+        }
+        var claims = new[]
+        {
+                                new Claim(JwtRegisteredClaimNames.Sub, user.Name_User),
+                                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                                new Claim(JwtRegisteredClaimNames.Email, user.Email),
+                                new Claim("uid", user.Id.ToString())
+                        }
+        .Union(roleClaims);
+        var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.Key));
+        Console.WriteLine("", symmetricSecurityKey);
+        var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
+        var jwtSecurityToken = new JwtSecurityToken(
+            issuer: _jwt.Issuer,
+            audience: _jwt.Audience,
+            claims: claims,
+            expires: DateTime.UtcNow.AddMinutes(_jwt.DurationInMinutes),
+            signingCredentials: signingCredentials);
+        return jwtSecurityToken;
     }
 
+    public async Task<LoginDto> UserLogin(LoginDto model)
+    {
+        var usuario = await _unitOfWork.Users.GetByUserNameAsync(model.UserName);
+        var resultado = _PasswordHasher.VerifyHashedPassword(usuario, usuario.Password, model.Password);
+
+        if (resultado == PasswordVerificationResult.Success)
+        {
+            return model;
+        }
+        return null;
+    }
  */
+
+
+    } 

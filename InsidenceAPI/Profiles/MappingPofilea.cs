@@ -11,9 +11,11 @@ namespace InsidenceAPI.Profiles;
     {
       public MappingPofiles(){
         CreateMap<Country, CountryDto>().ReverseMap().ForMember(o => o.Regions,d => d.Ignore());
-        CreateMap<Region, RegionDto>().ReverseMap();
+        CreateMap<Region, RegionDto>().ReverseMap().ForMember(i => i.Cities,d => d.Ignore());
         CreateMap<City, CityDto>().ReverseMap();
 
+
+        CreateMap<Region, RegionxCityDto>().ReverseMap();
         CreateMap<Country, CountryXRegDto>().ReverseMap();
       }
     }

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsidenceAPI", "InsidenceAP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aplicacion", "Aplicacion\Aplicacion.csproj", "{9F1B349E-36DF-4C11-918B-74B89479D19F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Segurity", "Segurity\Segurity.csproj", "{F234CA91-9B82-4D1F-85E5-56300DDA003A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,5 +42,9 @@ Global
 		{9F1B349E-36DF-4C11-918B-74B89479D19F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F1B349E-36DF-4C11-918B-74B89479D19F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F1B349E-36DF-4C11-918B-74B89479D19F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F234CA91-9B82-4D1F-85E5-56300DDA003A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F234CA91-9B82-4D1F-85E5-56300DDA003A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F234CA91-9B82-4D1F-85E5-56300DDA003A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F234CA91-9B82-4D1F-85E5-56300DDA003A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

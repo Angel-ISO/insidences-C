@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Aplicacion\Aplicacion.csproj" />
+    <ProjectReference Include="..\Segurity\Segurity.csproj" />
   </ItemGroup>
 
 </Project>
