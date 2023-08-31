@@ -5,7 +5,9 @@ using Persistencia;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using InsidenceAPI.Dtos;
-
+using Microsoft.AspNetCore.Authorization;
+using  InsidenceAPI.Helpers;
+using static InsidenceAPI.Helpers.Autorizacion;
 namespace API.Controllers;
 
 [ApiVersion("1.0")]
@@ -42,6 +44,7 @@ namespace API.Controllers;
         
     [HttpGet]
     [MapToApiVersion("1.1")]
+    [Authorize(Roles  = "Administrador, Gerente")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<IEnumerable<CountryXRegDto>>> Get11()

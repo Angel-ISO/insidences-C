@@ -1,16 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Aplicacion.Contratos;
 using Aplicacion.UnitOfWork;
 using AspNetCoreRateLimit;
 using Dominio;
 using Dominio.Interfaces;
+using InsidenceAPI.Helpers;
 using InsidenceAPI.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.IdentityModel.Tokens;
 using Segurity.SegurityToken;
 
 namespace InsidenceAPI.Extensions;
@@ -67,14 +71,45 @@ public static class ApplicationServiceExtension
      services.AddApiVersioning (Options => {
        
 
-        Options.DefaultApiVersion = new ApiVersion(1, 0);
-        Options.AssumeDefaultVersionWhenUnspecified = true;
-        Options.ApiVersionReader = ApiVersionReader.Combine(
-          new QueryStringApiVersionReader("ver"),
-          new HeaderApiVersionReader ("X-Version")
-        );
+      Options.DefaultApiVersion = new ApiVersion(1, 0);
+            Options.AssumeDefaultVersionWhenUnspecified = true;
+            //options.ApiVersionReader = new QueryStringApiVersionReader("ver");
+            Options.ApiVersionReader = ApiVersionReader.Combine(
+                new QueryStringApiVersionReader("ver"),
+                new HeaderApiVersionReader("X-Version")
+            );
+            Options.ReportApiVersions = true;
 
-     });
+        });
     }
 
+
+    public static void AddJwt(this IServiceCollection services, IConfiguration configuration)
+    {
+        //Configuration from AppSettings
+        services.Configure<JWT>(configuration.GetSection("JWT"));
+
+        //Adding Athentication - JWT
+        services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        })
+            .AddJwtBearer(o =>
+            {
+                o.RequireHttpsMetadata = false;
+                o.SaveToken = false;
+                o.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ClockSkew = TimeSpan.Zero,
+                    ValidIssuer = configuration["JWT:Issuer"],
+                    ValidAudience = configuration["JWT:Audience"],
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Key"]))
+                };
+            });
+    }
 }
