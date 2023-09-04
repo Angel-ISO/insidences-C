@@ -56,7 +56,7 @@ namespace Persistencia.Configuration;
                 .IsRequired();
 
 
-                 builder.HasOne(p => p.User)
+                 builder.HasOne(p => p.Person)
                 .WithMany(p => p.Addresses)
                 .HasForeignKey(p => p.Id_Pa);
 

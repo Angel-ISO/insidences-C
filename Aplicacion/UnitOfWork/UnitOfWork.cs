@@ -7,7 +7,7 @@ public class UnitOfWork : IUnitOfWork, IDisposable
 {
 
     private readonly IncidenceContext _context;
-    AddressRepository _Address;
+    private AddressRepository _Address;
     private AreaRepository _Area;
     private ContactTypeRepository _ContactType;
     private AreaUserRepository _AreaUser;
@@ -26,12 +26,26 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     private StateRepository _State;
     private TypeIncidenceRepository _TypeIncidence;
     private UserRepository _User;
+   private PersonRepository _Person;
+
 
     public UnitOfWork(IncidenceContext context)
     {
         _context = context;
     }
 
+
+  public IPersonRepository Persons
+    {
+        get
+        {
+            if (_Person is not null)
+            {
+                return _Person;
+            }
+            return _Person = new PersonRepository(_context);
+        }
+    }
 
 
     public IAddressRepository Addresses

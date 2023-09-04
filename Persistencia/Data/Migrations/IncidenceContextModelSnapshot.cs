@@ -3,20 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistencia;
 
 #nullable disable
 
-namespace Persistencia.Migrations
+namespace Persistencia.Data.Migrations
 {
     [DbContext(typeof(IncidenceContext))]
-    [Migration("20230829224715_InitialCreate")]
-    partial class InitialCreate
+    partial class IncidenceContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -127,14 +124,14 @@ namespace Persistencia.Migrations
                     b.Property<int>("Id_Area")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id_User")
+                    b.Property<int>("Id_Person")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("Id_Area");
 
-                    b.HasIndex("Id_User");
+                    b.HasIndex("Id_Person");
 
                     b.ToTable("AreaUser", (string)null);
                 });
@@ -209,20 +206,20 @@ namespace Persistencia.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Category_Contact");
 
+                    b.Property<int>("Id_Person")
+                        .HasColumnType("int");
+
                     b.Property<int>("Id_TypeCon")
                         .HasColumnType("int")
                         .HasColumnName("Type_Contact");
-
-                    b.Property<int>("Id_User")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("Id_CategoryContact");
 
-                    b.HasIndex("Id_TypeCon");
+                    b.HasIndex("Id_Person");
 
-                    b.HasIndex("Id_User");
+                    b.HasIndex("Id_TypeCon");
 
                     b.ToTable("Contact", (string)null);
                 });
@@ -374,7 +371,7 @@ namespace Persistencia.Migrations
                         .HasColumnType("int")
                         .HasColumnName("Id_State");
 
-                    b.Property<int>("Id_User")
+                    b.Property<int>("Id_person")
                         .HasColumnType("int")
                         .HasColumnName("Id_User");
 
@@ -387,7 +384,7 @@ namespace Persistencia.Migrations
 
                     b.HasIndex("Id_State");
 
-                    b.HasIndex("Id_User");
+                    b.HasIndex("Id_person");
 
                     b.HasIndex("PlaceId");
 
@@ -435,6 +432,37 @@ namespace Persistencia.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Peripheral", (string)null);
+                });
+
+            modelBuilder.Entity("Dominio.Person", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Id_User")
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Id_DocumentType")
+                        .HasColumnType("int")
+                        .HasColumnName("document_type");
+
+                    b.Property<string>("Lastname")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("varchar")
+                        .HasColumnName("varchar");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("varchar")
+                        .HasColumnName("Name");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Id_DocumentType");
+
+                    b.ToTable("Person", (string)null);
                 });
 
             modelBuilder.Entity("Dominio.Place", b =>
@@ -580,19 +608,6 @@ namespace Persistencia.Migrations
                         .HasColumnType("varchar")
                         .HasColumnName("Email");
 
-                    b.Property<int>("Id_DocumentType")
-                        .HasColumnType("int")
-                        .HasColumnName("Id_DocumentType");
-
-                    b.Property<int>("Id_Rol")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Lastname_User")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("varchar")
-                        .HasColumnName("LastNameUser");
-
                     b.Property<string>("Name_User")
                         .IsRequired()
                         .HasMaxLength(150)
@@ -606,12 +621,6 @@ namespace Persistencia.Migrations
                         .HasColumnName("Password");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Id_DocumentType");
-
-                    b.HasIndex("Name_User", "Email")
-                        .IsUnique()
-                        .HasDatabaseName("IX-MiIndice");
 
                     b.ToTable("User", (string)null);
                 });
@@ -637,7 +646,7 @@ namespace Persistencia.Migrations
                         .WithMany("Addresses")
                         .HasForeignKey("CityId");
 
-                    b.HasOne("Dominio.User", "User")
+                    b.HasOne("Dominio.Person", "Person")
                         .WithMany("Addresses")
                         .HasForeignKey("Id_Pa")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -645,7 +654,7 @@ namespace Persistencia.Migrations
 
                     b.Navigation("City");
 
-                    b.Navigation("User");
+                    b.Navigation("Person");
                 });
 
             modelBuilder.Entity("Dominio.AreaUser", b =>
@@ -656,15 +665,15 @@ namespace Persistencia.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Dominio.User", "User")
+                    b.HasOne("Dominio.Person", "Person")
                         .WithMany("AreaUsers")
-                        .HasForeignKey("Id_User")
+                        .HasForeignKey("Id_Person")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Area");
 
-                    b.Navigation("User");
+                    b.Navigation("Person");
                 });
 
             modelBuilder.Entity("Dominio.CategoryContact", b =>
@@ -693,23 +702,23 @@ namespace Persistencia.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Dominio.Person", "Person")
+                        .WithMany("Contacts")
+                        .HasForeignKey("Id_Person")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Dominio.ContactType", "TypeOfContact")
                         .WithMany("Contacts")
                         .HasForeignKey("Id_TypeCon")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Dominio.User", "User")
-                        .WithMany("Contacts")
-                        .HasForeignKey("Id_User")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("CategoryContact");
 
-                    b.Navigation("TypeOfContact");
+                    b.Navigation("Person");
 
-                    b.Navigation("User");
+                    b.Navigation("TypeOfContact");
                 });
 
             modelBuilder.Entity("Dominio.DetailIncidence", b =>
@@ -770,9 +779,9 @@ namespace Persistencia.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Dominio.User", "User")
+                    b.HasOne("Dominio.Person", "Person")
                         .WithMany("Incidences")
-                        .HasForeignKey("Id_User")
+                        .HasForeignKey("Id_person")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -782,11 +791,11 @@ namespace Persistencia.Migrations
 
                     b.Navigation("Area");
 
+                    b.Navigation("Person");
+
                     b.Navigation("Place");
 
                     b.Navigation("State");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Dominio.Peripheral", b =>
@@ -798,6 +807,17 @@ namespace Persistencia.Migrations
                         .IsRequired();
 
                     b.Navigation("DetailIncidence");
+                });
+
+            modelBuilder.Entity("Dominio.Person", b =>
+                {
+                    b.HasOne("Dominio.DocumentType", "DocumentType")
+                        .WithMany("Persons")
+                        .HasForeignKey("Id_DocumentType")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DocumentType");
                 });
 
             modelBuilder.Entity("Dominio.Place", b =>
@@ -829,17 +849,6 @@ namespace Persistencia.Migrations
                         .HasForeignKey("DetailIncidenceId");
 
                     b.Navigation("DetailIncidence");
-                });
-
-            modelBuilder.Entity("Dominio.User", b =>
-                {
-                    b.HasOne("Dominio.DocumentType", "DocumentType")
-                        .WithMany("Users")
-                        .HasForeignKey("Id_DocumentType")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DocumentType");
                 });
 
             modelBuilder.Entity("Dominio.UserRol", b =>
@@ -897,7 +906,7 @@ namespace Persistencia.Migrations
 
             modelBuilder.Entity("Dominio.DocumentType", b =>
                 {
-                    b.Navigation("Users");
+                    b.Navigation("Persons");
                 });
 
             modelBuilder.Entity("Dominio.Incidence", b =>
@@ -908,6 +917,17 @@ namespace Persistencia.Migrations
             modelBuilder.Entity("Dominio.LevelIncidence", b =>
                 {
                     b.Navigation("DetailIncidences");
+                });
+
+            modelBuilder.Entity("Dominio.Person", b =>
+                {
+                    b.Navigation("Addresses");
+
+                    b.Navigation("AreaUsers");
+
+                    b.Navigation("Contacts");
+
+                    b.Navigation("Incidences");
                 });
 
             modelBuilder.Entity("Dominio.Place", b =>
@@ -939,14 +959,6 @@ namespace Persistencia.Migrations
 
             modelBuilder.Entity("Dominio.User", b =>
                 {
-                    b.Navigation("Addresses");
-
-                    b.Navigation("AreaUsers");
-
-                    b.Navigation("Contacts");
-
-                    b.Navigation("Incidences");
-
                     b.Navigation("UserRols");
                 });
 #pragma warning restore 612, 618

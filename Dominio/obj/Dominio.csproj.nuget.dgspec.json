@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {}
+    "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
-        "packagesPath": "C:\\Users\\APM01-041\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\obj\\",
+        "projectPath": "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
+        "packagesPath": "C:\\Users\\Angel Ortega\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Angel Ortega\\Documents\\insidences-C\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\APM01-041\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Angel Ortega\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"

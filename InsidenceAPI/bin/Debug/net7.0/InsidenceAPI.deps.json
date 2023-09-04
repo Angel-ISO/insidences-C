@@ -16,8 +16,8 @@
           "Microsoft.AspNetCore.OpenApi": "7.0.10",
           "Microsoft.EntityFrameworkCore": "7.0.10",
           "Microsoft.EntityFrameworkCore.Design": "7.0.10",
-          "Segurity": "1.0.0",
-          "Swashbuckle.AspNetCore": "6.5.0"
+          "Swashbuckle.AspNetCore": "6.5.0",
+          "System.IdentityModel.Tokens.Jwt": "6.32.2"
         },
         "runtime": {
           "InsidenceAPI.dll": {}
@@ -1001,15 +1001,6 @@
         "runtime": {
           "Persistencia.dll": {}
         }
-      },
-      "Segurity/1.0.0": {
-        "dependencies": {
-          "Aplicacion": "1.0.0",
-          "System.IdentityModel.Tokens.Jwt": "6.32.2"
-        },
-        "runtime": {
-          "Segurity.dll": {}
-        }
       }
     }
   },
@@ -1807,11 +1798,6 @@
       "sha512": ""
     },
     "Persistencia/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Segurity/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

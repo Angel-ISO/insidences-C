@@ -10,7 +10,7 @@ public class Address : BaseEntity
     public string? NumberVenereableWay {get; set;}
     public string? NumberPlate {get; set;}
     public int Id_Pa {get; set;}
-    public User ? User {get; set;}
+    public Person ? Person {get; set;}
     public int Id_CityA {get; set;}
     public City ? City  {get; set;}
 }

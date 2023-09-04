@@ -6,8 +6,8 @@ public class Incidence : BaseEntity
 {
    
     
-    public int Id_User { get; set; }
-    public User ? User { get; set; }
+    public int Id_person { get; set; }
+    public Person ? Person { get; set; }
 
     public int Id_State { get; set; }
     public State ? State { get; set; }

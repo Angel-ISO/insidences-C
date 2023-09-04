@@ -5,116 +5,119 @@ using Persistencia;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using InsidenceAPI.Dtos;
-using Microsoft.AspNetCore.Authorization;
-using  InsidenceAPI.Helpers;
-using static InsidenceAPI.Helpers.Autorizacion;
+
 namespace API.Controllers;
 
 [ApiVersion("1.0")]
 [ApiVersion("1.1")]
- public class CountryController : BaseApiController
+ public class PersonController : BaseApiController
 {
 
      private readonly IUnitOfWork _unitofwork;
      private readonly IMapper _mapper;
 
-    public CountryController(IUnitOfWork unitOfWork, IMapper mapper)
+    public PersonController(IUnitOfWork unitOfWork, IMapper mapper)
     {
         this._unitofwork = unitOfWork;
         _mapper = mapper;
     }
-/* 
-    [HttpGet]
+
+  /*   [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<Country>>> Get()
+    public async Task<ActionResult<IEnumerable<Place>>> Get()
     {
-        var Con = await  unitofwork.Countries.GetAllAsync();
+        var Con = await  unitofwork.Persons.GetAllAsync();
         return Ok(Con);
     } */
 
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<CountryDto>>> Get()
+    public async Task<ActionResult<IEnumerable<PersonDto>>> Get()
     {
-        var Con = await  _unitofwork.Countries.GetAllAsync();
-        return _mapper.Map<List<CountryDto>>(Con);
+        var Con = await  _unitofwork.Persons.GetAllAsync();
+        return Ok(Con);
     }
-        
+
+
+          
     [HttpGet]
     [MapToApiVersion("1.1")]
-   // [Authorize(Roles  = "Administrador, Gerente")]
+    //[Authorize(Roles  = "Administrador, Gerente")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<CountryXRegDto>>> Get11()
+    public async Task<ActionResult<IEnumerable<PersonxIncidenceDto>>> Get11()
     {
-        var Con = await  _unitofwork.Countries.GetAllAsync();
-        return _mapper.Map<List<CountryXRegDto>>(Con);
+        var Con = await  _unitofwork.Persons.GetAllAsync();
+        return _mapper.Map<List<PersonxIncidenceDto>>(Con);
     }
 
 
-
-    [HttpGet("{id}")]
+     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
       public async Task<IActionResult> Get(int id)
     {
-        var byidC = await  _unitofwork.Countries.GetByIdAsync(id);
+        var byidC = await  _unitofwork.Persons.GetByIdAsync(id);
         return Ok(byidC);
     }
-   /*  [HttpPost]
+
+  /*   [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Country>> Post(Country country){
-        this.unitofwork.Countries.Add(country);
-        await unitofwork.SaveAsync();
-        if(country == null)
+    public async Task<ActionResult<Person>> Post(Person person){
+        this._unitofwork.Persons.Add(person);
+        await _unitofwork.SaveAsync();
+        if(person == null)
         {
             return BadRequest();
         }
-        return CreatedAtAction(nameof(Post),new {id= country.Id}, country);
-    }
- */
-
+        return CreatedAtAction(nameof(Post),new {id= person.Id}, person);
+    } */
 
     [HttpPost]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Country>> Post(CountryDto countryDto){
-        var country = _mapper.Map<Country>(countryDto);
-        this._unitofwork.Countries.Add(country);
+    public async Task<ActionResult<Person>> Post(PersonDto personDto){
+        var person = _mapper.Map<Person>(personDto);
+        this._unitofwork.Persons.Add(person);
         await _unitofwork.SaveAsync();
-        if(country == null)
+        if(person == null)
         {
             return BadRequest();
         }
-        countryDto.Id = country.Id.ToString();
-        return CreatedAtAction(nameof(Post),new {id= countryDto.Id}, countryDto);
+        personDto.SuIdDeDocumento = person.Id;
+        return CreatedAtAction(nameof(Post),new {id= personDto.SuIdDeDocumento}, personDto);
     }
 
-    [HttpPut("{id}")]
+
+
+
+     [HttpPut("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<Country>> Put(int id, [FromBody]Country country){
-        if(country == null)
+    public async Task<ActionResult<Person>> Put(int id, [FromBody]Person person){
+        if(person == null)
             return NotFound();
-        _unitofwork.Countries.Update(country);
+        _unitofwork.Persons.Update(person);
         await _unitofwork.SaveAsync();
-        return country;
+        return person;
     }
-    
     [HttpDelete("{id}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(int id){
-        var D = await _unitofwork.Countries.GetByIdAsync(id);
+        var D = await _unitofwork.Persons.GetByIdAsync(id);
         if(D == null){
             return NotFound();
         }
-        _unitofwork.Countries.Remove(D);
+        _unitofwork.Persons.Remove(D);
         await _unitofwork.SaveAsync();
         return NoContent();
     }
+
+
+   
 }

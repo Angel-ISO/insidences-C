@@ -41,7 +41,7 @@ public class UserService : IUserService
         
         if (usuarioExiste == null)
         {
-            /*var rolPredeterminado = _unitOfWork.Rols
+           /* var rolPredeterminado = _unitOfWork.Rols
                                                 .Find(u => u.Name_Rol == Autorizacion.Rol_PorDefecto.ToString())
                                                 .First();*/
             try
@@ -73,7 +73,7 @@ public class UserService : IUserService
         
         if (usuario == null)
         {
-            return $"No exixte algun usuario registrado con la cuenta {model.UserName}.";
+            return $"No existe algun usuario registrado con la cuenta olvido algun caracter?{model.UserName}.";
         }
 
         var resultado = _passwordHasher.VerifyHashedPassword(usuario, usuario.Password, model.Password);

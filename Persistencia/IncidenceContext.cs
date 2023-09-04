@@ -9,6 +9,7 @@ public class IncidenceContext : DbContext {
 
     }
         public DbSet<User> ?Users { get; set; }
+        public DbSet<Person> ?Persons { get; set; }
         public DbSet<TypeIncidence> ? TypeIncedences { get; set; }
         public DbSet<State> ? State { get; set; }
         public DbSet<Rol> ? Rols { get; set; }

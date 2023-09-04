@@ -8,7 +8,7 @@ public interface IUnitOfWork
     IContactRepository Contacts {get;}   
     IDetailIncidenceRepository DetailIncidences {get;}   
     IContactTypeRepository ContactTypes {get;}   
-
+    IPersonRepository Persons {get;}   
     IDocumentTypeRepository DocumentTypes {get;}   
     IIncidenceRepository Incidences  {get;}   
     ILevelIncidenceRepository LevelIncidences {get;}   

@@ -22,9 +22,9 @@ public class AreaUserConfiguration : IEntityTypeConfiguration<AreaUser>
 
 
 
-                builder.HasOne(y => y.User)
+                builder.HasOne(y => y.Person)
                 .WithMany(l => l.AreaUsers)
-                .HasForeignKey(z => z.Id_User)
+                .HasForeignKey(z => z.Id_Person)
                 .IsRequired();
 
                 builder.HasOne(y => y.Area)

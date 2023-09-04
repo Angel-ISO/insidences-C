@@ -7,6 +7,6 @@ public class AreaUser : BaseEntity
   
     public int Id_Area { get; set; }
     public Area ? Area { get; set; }
-    public int Id_User { get; set; }
-     public User ? User { get; set; }
+    public int Id_Person { get; set; }
+     public Person ? Person { get; set; }
 }

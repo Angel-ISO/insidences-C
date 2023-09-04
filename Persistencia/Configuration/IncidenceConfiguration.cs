@@ -17,7 +17,7 @@ public class IncidenceConfiguration : IEntityTypeConfiguration<Incidence>
             .IsRequired();
 
 
-            builder.Property(p => p.Id_User)
+            builder.Property(p => p.Id_person)
             .HasColumnName("Id_User")
             .HasColumnType("int")
             .IsRequired();
@@ -57,9 +57,9 @@ public class IncidenceConfiguration : IEntityTypeConfiguration<Incidence>
 
 
 
-            builder.HasOne(y => y.User)
+            builder.HasOne(y => y.Person)
             .WithMany(l => l.Incidences)
-            .HasForeignKey(z => z.Id_User)
+            .HasForeignKey(z => z.Id_person)
             .IsRequired();
 
             builder.HasOne(y => y.Area)

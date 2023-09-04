@@ -305,3 +305,4 @@ C:\Users\APM01-041\Documents\insidences-C\InsidenceAPI\obj\Debug\net7.0\ref\Insi
 C:\Users\APM01-041\Documents\insidences-C\InsidenceAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
 C:\Users\APM01-041\Documents\insidences-C\InsidenceAPI\bin\Debug\net7.0\Segurity.dll
 C:\Users\APM01-041\Documents\insidences-C\InsidenceAPI\bin\Debug\net7.0\Segurity.pdb
+C:\Users\Angel Ortega\Documents\insidences-C\InsidenceAPI\bin\Debug\net7.0\Microsoft.IdentityModel.Abstractions.dll
