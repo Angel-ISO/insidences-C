@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using API.Services;
 using Aplicacion.Contratos;
 using Aplicacion.UnitOfWork;
 using AspNetCoreRateLimit;
@@ -35,9 +36,9 @@ public static class ApplicationServiceExtension
         // services.AddScoped<IMoviesInterface, MovieRepository>();
         // services.AddScoped<IGenreInterface, GenreRepository>();
         // services.AddScoped<IDirectorInterface, DirectorRepository>();
+       // services.AddScoped<IJwtGenerator,JwtGenerator>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddAutoMapper(typeof(ApplicationServiceExtension));
-        services.AddScoped<IJwtGenerator,JwtGenerator>();
         services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
         services.AddScoped<IUserService, UserService>();
      }
@@ -73,7 +74,6 @@ public static class ApplicationServiceExtension
 
       Options.DefaultApiVersion = new ApiVersion(1, 0);
             Options.AssumeDefaultVersionWhenUnspecified = true;
-            //options.ApiVersionReader = new QueryStringApiVersionReader("ver");
             Options.ApiVersionReader = ApiVersionReader.Combine(
                 new QueryStringApiVersionReader("ver"),
                 new HeaderApiVersionReader("X-Version")
@@ -86,10 +86,8 @@ public static class ApplicationServiceExtension
 
     public static void AddJwt(this IServiceCollection services, IConfiguration configuration)
     {
-        //Configuration from AppSettings
         services.Configure<JWT>(configuration.GetSection("JWT"));
 
-        //Adding Athentication - JWT
         services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

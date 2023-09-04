@@ -1,8 +1,11 @@
 using System.Reflection;
+using System.Text;
 using AspNetCoreRateLimit;
 using InsidenceAPI.Extensions;
 using iText.Kernel.XMP.Options;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Persistencia;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +27,21 @@ builder.Services.ConfigureCors();
 builder.Services.AddAplicationService();
 builder.Services.ConfigureRateLimiting();
 builder.Services.ConfigureApiVersioning();
+
+
+
+var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context"));
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>{
+    opt.TokenValidationParameters = new TokenValidationParameters{
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = key,
+        ValidateAudience = false,
+        ValidateIssuer = false
+    };
+});
+
+
+
 
 builder.Services.AddDbContext<IncidenceContext>(options =>
 {

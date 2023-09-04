@@ -5687,11 +5687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj",
+      "projectUniqueName": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj",
       "projectName": "Segurity",
-      "projectPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj",
+      "projectPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj",
       "packagesPath": "C:\\Users\\APM01-041\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\obj\\",
+      "outputPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\APM01-041\\AppData\\Roaming\\NuGet\\NuGet.Config"

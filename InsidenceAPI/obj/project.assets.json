@@ -6100,11 +6100,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\APM01-041\\Documents\\insidences-C\\InsidenceAPI\\InsidenceAPI.csproj",
+      "projectUniqueName": "C:\\Users\\APM01-041\\Documents\\insidences-C\\InsidenceAPI\\InsidenceAPI.csproj",
       "projectName": "InsidenceAPI",
-      "projectPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\InsidenceAPI\\InsidenceAPI.csproj",
+      "projectPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\InsidenceAPI\\InsidenceAPI.csproj",
       "packagesPath": "C:\\Users\\APM01-041\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\InsidenceAPI\\obj\\",
+      "outputPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\InsidenceAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\APM01-041\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6122,8 +6122,8 @@
             "C:\\Users\\APM01-041\\Documents\\insidences-C\\Aplicacion\\Aplicacion.csproj": {
               "projectPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Aplicacion\\Aplicacion.csproj"
             },
-            "c:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj": {
-              "projectPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj"
+            "C:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj": {
+              "projectPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj"
             }
           }
         }

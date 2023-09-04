@@ -1,79 +1,39 @@
-using AutoMapper;
-using Dominio;
-using Dominio.Interfaces;
-using Persistencia;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+using InsidenceAPI.Dtos;
+using InsidenceAPI.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
-namespace API.Controllers;
+namespace ApiIncidencias.Controllers;
 
- public class UserController : BaseApiController
+public class UserController : BaseApiController
 {
-
-     private readonly IUnitOfWork unitofwork;
-     private readonly IMapper mapper;
-
-    public UserController(IUnitOfWork unitOfWork, IMapper mapper)
+    private readonly IUserService _userService;
+    public UserController(IUserService userService)
     {
-        this.unitofwork = unitOfWork;
-        this.mapper = mapper;
+        _userService = userService;
     }
-
-    [HttpGet]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<User>>> Get()
+    [HttpPost("register")]
+    public async Task<ActionResult> RegisterAsync(RegisterDto model)
     {
-        var Con = await  unitofwork.Users.GetAllAsync();
-        return Ok(Con);
+        var result = await _userService.RegistrerAsync(model);
+        return Ok(result);
     }
 
-     [HttpGet("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-      public async Task<IActionResult> Get(int id)
+    [HttpPost("token")]
+    public async Task<IActionResult> GetTokenAsync(LoginDto model)
     {
-        var byidC = await  unitofwork.Users.GetByIdAsync(id);
-        return Ok(byidC);
-    }
-
-    [HttpPost]
-    [ProducesResponseType(StatusCodes.Status201Created)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<User>> Post(User user){
-        this.unitofwork.Users.Add(user);
-        await unitofwork.SaveAsync();
-        if(user == null)
-        {
-            return BadRequest();
-        }
-        return CreatedAtAction(nameof(Post),new {id= user.Id}, user);
-    }
-
-     [HttpPut("{id}")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<User>> Put(int id, [FromBody]User user){
-        if(user == null)
-            return NotFound();
-        unitofwork.Users.Update(user);
-        await unitofwork.SaveAsync();
-        return user;
-    }
-    [HttpDelete("{id}")]
-    [ProducesResponseType(StatusCodes.Status204NoContent)]
-    [ProducesResponseType(StatusCodes.Status404NotFound)]
-    public async Task<IActionResult> Delete(int id){
-        var D = await unitofwork.Users.GetByIdAsync(id);
-        if(D == null){
-            return NotFound();
-        }
-        unitofwork.Users.Remove(D);
-        await unitofwork.SaveAsync();
-        return NoContent();
+        var result = await _userService.GetTokenAsync(model);
+        return Ok(result);
     }
 
 
-   
+    [HttpPost("addrole")]
+    public async Task<IActionResult> AddRoleAsync(AddRoleDto model)
+    {
+        var result = await _userService.AddRoleAsync(model);
+        return Ok(result);
+    }
 }

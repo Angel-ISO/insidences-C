@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj": {}
+    "C:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj": {}
   },
   "projects": {
     "C:\\Users\\APM01-041\\Documents\\insidences-C\\Aplicacion\\Aplicacion.csproj": {
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
-                "projectPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj"
+              "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj"
               },
               "c:\\Users\\APM01-041\\Documents\\insidences-C\\Persistencia\\Persistencia.csproj": {
                 "projectPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Persistencia\\Persistencia.csproj"
@@ -70,14 +70,14 @@
         }
       }
     },
-    "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
+    "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
         "projectName": "Dominio",
-        "projectPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
+        "projectPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj",
         "packagesPath": "C:\\Users\\APM01-041\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\obj\\",
+        "outputPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\APM01-041\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -159,8 +159,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
-                "projectPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj"
+              "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj": {
+                "projectPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Dominio\\Dominio.csproj"
               }
             }
           }
@@ -204,14 +204,14 @@
         }
       }
     },
-    "c:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj": {
+    "C:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj",
+        "projectUniqueName": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj",
         "projectName": "Segurity",
-        "projectPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj",
+        "projectPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\Segurity.csproj",
         "packagesPath": "C:\\Users\\APM01-041\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\obj\\",
+        "outputPath": "C:\\Users\\APM01-041\\Documents\\insidences-C\\Segurity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\APM01-041\\AppData\\Roaming\\NuGet\\NuGet.Config"
