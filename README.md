@@ -81,6 +81,44 @@ en este ejemplo se resalta que los endpoints tiene inyeccion y flujo de data com
 ![peticion muestra](/Media/Peticion.PNG)
 
 
+
+## uso de Jwt en el proyecto
+
+jwt tiene un papel vital en el proyecto por lo tanto es necesario para mantener los enstandares de seguridad informatica que se nos son solicidatos a la hora de crear un backend. Acontinuacion se le mostrara un ejemplo de creacion.
+
+#### creacion usuario
+
+podemos crear un usuario mandando un cuerpo con los respectivos campos requeridos.
+
+![crear](/Media/creacionusuario.PNG)
+
+
+no solo es enviar la peticion sino tambien saber el transfondo que esta genera. Sabremos que la informacion se inserto en la base de datos si en la terminal de VSC se visualiza la siguiente sentencia.
+
+![comando terminal](/Media/consolacreacionusuario.PNG)
+
+seguidamente nuestra base de datos deberia verse de la siguiente manera con el nuevo usuario
+
+
+![comando terminal](/Media/admintablamjr.PNG)
+
+donde podemos observar la encriptacion de nuestra contraseña.
+
+
+#### añadir rol al usuario
+
+cuando tengamos creado el usuario podemos asignarle un rol respectivo que este en nuestra base de datos y desde luego en nuestro backend
+
+![peticion muestra](/Media/rolesusuario.PNG)
+
+
+y consecutivamente se podra observar la relacion en nuestra tabla intermedia de nuestra base de datos
+
+![tabla intermedia](/Media/relacion%20rol.PNG)
+
+
+
+
 Cabe aclarar que el proyecto no está 100% culminado. Estar atento a esta documentación que será paulatinamente actualizada faltando añadir autenticaciones y encriptamiento de validaciones para mayor proteccion del mismo🤗.
 
 
