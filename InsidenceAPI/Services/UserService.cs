@@ -13,9 +13,9 @@ using InsidenceAPI.Services;
 namespace API.Services;
 public class UserService : IUserService
 {
-    private readonly JWT  _jwt;
-    private readonly IUnitOfWork  _unitOfWork;
-    private readonly IPasswordHasher<User>  _passwordHasher;
+    private readonly JWT _jwt;
+    private readonly IUnitOfWork _unitOfWork;
+    private readonly IPasswordHasher<User> _passwordHasher;
 
     public UserService(IUnitOfWork unitOfWork, IOptions<JWT> jwt, IPasswordHasher<User> passwordHasher)
     {
@@ -29,8 +29,8 @@ public class UserService : IUserService
         var usuario = new User
         {
             Email = registerDto.Email,
-            Name_User= registerDto.UserName,
-            
+            Name_User = registerDto.UserName,
+
         };
 
         usuario.Password = _passwordHasher.HashPassword(usuario, registerDto.Password);
@@ -38,12 +38,12 @@ public class UserService : IUserService
         var usuarioExiste = _unitOfWork.Users
                                             .Find(u => u.Name_User.ToLower() == registerDto.UserName.ToLower())
                                             .FirstOrDefault();
-        
+
         if (usuarioExiste == null)
         {
-           /* var rolPredeterminado = _unitOfWork.Rols
-                                                .Find(u => u.Name_Rol == Autorizacion.Rol_PorDefecto.ToString())
-                                                .First();*/
+            /* var rolPredeterminado = _unitOfWork.Rols
+                                                 .Find(u => u.Name_Rol == Autorizacion.Rol_PorDefecto.ToString())
+                                                 .First();*/
             try
             {
                 //usuario.Rols.Add(rolPredeterminado);
@@ -59,8 +59,9 @@ public class UserService : IUserService
                 return $"Error: {message}";
             }
         }
-        else{
-            
+        else
+        {
+
             return $"El usuario con {registerDto.UserName} ya se encuentra resgistrado.";
         }
 
@@ -70,7 +71,7 @@ public class UserService : IUserService
     {
         var usuario = await _unitOfWork.Users
                                                 .GetByUserNameAsync(model.UserName);
-        
+
         if (usuario == null)
         {
             return $"No existe algun usuario registrado con la cuenta olvido algun caracter?{model.UserName}.";
@@ -83,12 +84,12 @@ public class UserService : IUserService
             var rolExiste = _unitOfWork.Rols
                                             .Find(u => u.Name_Rol.ToLower() == model.Role.ToLower())
                                             .FirstOrDefault();
-            
-            if (rolExiste !=null)
+
+            if (rolExiste != null)
             {
                 var usuarioTieneRol = usuario.Rols
                                                 .Any(u => u.Id == rolExiste.Id);
-                
+
                 if (usuarioTieneRol == false)
                 {
                     usuario.Rols.Add(rolExiste);
@@ -105,11 +106,14 @@ public class UserService : IUserService
         return $"Credenciales incorrectas para el ususario {usuario.Name_User}.";
     }
 
+
+
+
     public async Task<DatosUsuarioDto> GetTokenAsync(LoginDto model)
     {
         DatosUsuarioDto datosUsuarioDto = new DatosUsuarioDto();
         var usuario = await _unitOfWork.Users
-                                                .GetByUserNameAsync(model.UserName);
+                                                    .GetByUserNameAsync(model.UserName);
 
         if (usuario == null)
         {
@@ -123,17 +127,26 @@ public class UserService : IUserService
         {
             datosUsuarioDto.Mensaje = "OK";
             datosUsuarioDto.EstaAutenticado = true;
-            JwtSecurityToken jwtSecurityToken = CreateJwtToken(usuario);
-            datosUsuarioDto.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
-            datosUsuarioDto.UserName = usuario.Name_User;
-            datosUsuarioDto.Email = usuario.Email;
-            //datosUsuarioDto.Token = _jwtGenerador.CrearToken(usuario);
-            datosUsuarioDto.Rols = usuario.Rols
-                                                .Select(p => p.Name_Rol)
-                                                .ToList();
-           
-            
-            return datosUsuarioDto; 
+            if (usuario != null && usuario != null)
+            {
+                JwtSecurityToken jwtSecurityToken = CreateJwtToken(usuario);
+                datosUsuarioDto.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
+                datosUsuarioDto.UserName = usuario.Name_User;
+                datosUsuarioDto.Email = usuario.Email;
+                datosUsuarioDto.Rols = usuario.Rols
+                                                    .Select(p => p.Name_Rol)
+                                                    .ToList();
+
+
+                return datosUsuarioDto;
+            }
+            else
+            {
+                datosUsuarioDto.EstaAutenticado = false;
+                datosUsuarioDto.Mensaje = $"Credenciales incorrectas para el usuario {usuario.Name_User}.";
+
+                return datosUsuarioDto;
+            }
         }
 
         datosUsuarioDto.EstaAutenticado = false;
@@ -142,8 +155,6 @@ public class UserService : IUserService
         return datosUsuarioDto;
 
     }
-
-    // los siguientes metodos no hacen parte de la Interfaz no son necesarios
 
     private JwtSecurityToken CreateJwtToken(User usuario)
     {
@@ -160,17 +171,17 @@ public class UserService : IUserService
                 new Claim("uid", usuario.Id.ToString())
         }
         .Union(roleClaims);
-        
+
         var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.Key));
         Console.WriteLine("", symmetricSecurityKey);
 
         var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
         var JwtSecurityToken = new JwtSecurityToken(
-            issuer : _jwt.Issuer,
-            audience : _jwt.Audience,
-            claims : claims,
-            expires : DateTime.UtcNow.AddMinutes(_jwt.DurationInMinutes),
-            signingCredentials : signingCredentials);
+            issuer: _jwt.Issuer,
+            audience: _jwt.Audience,
+            claims: claims,
+            expires: DateTime.UtcNow.AddMinutes(_jwt.DurationInMinutes),
+            signingCredentials: signingCredentials);
 
         return JwtSecurityToken;
     }

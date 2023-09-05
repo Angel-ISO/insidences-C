@@ -44,7 +44,7 @@ namespace API.Controllers;
         
     [HttpGet]
     [MapToApiVersion("1.1")]
-   // [Authorize(Roles  = "Administrador, Gerente")]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<IEnumerable<CountryXRegDto>>> Get11()

@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using API.Services;
-using Aplicacion.Contratos;
 using Aplicacion.UnitOfWork;
 using AspNetCoreRateLimit;
 using Dominio;
@@ -12,6 +7,7 @@ using Dominio.Interfaces;
 using InsidenceAPI.Helpers;
 using InsidenceAPI.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
@@ -40,6 +36,7 @@ public static class ApplicationServiceExtension
         services.AddAutoMapper(typeof(ApplicationServiceExtension));
         services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
         services.AddScoped<IUserService, UserService>();
+        services.AddScoped<IAuthorizationHandler, GlobalVerbRoleHandler>();
      }
 
 

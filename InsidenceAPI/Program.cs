@@ -2,8 +2,10 @@ using System.Reflection;
 using System.Text;
 using AspNetCoreRateLimit;
 using InsidenceAPI.Extensions;
+using InsidenceAPI.Helpers;
 using iText.Kernel.XMP.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Persistencia;
@@ -17,7 +19,7 @@ builder.Services.AddControllers( options => {
     options.RespectBrowserAcceptHeader = true;
     options.ReturnHttpNotAcceptable=true;
 }).AddXmlSerializerFormatters();
-
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -41,11 +43,19 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 });
 
 
+builder.Services.AddAuthorization(opts =>{
+    opts.DefaultPolicy = new AuthorizationPolicyBuilder()
+        .RequireAuthenticatedUser()
+        .AddRequirements(new GlobalVerbRoleRequirement())
+        .Build();
+});
+
+
 
 
 builder.Services.AddDbContext<IncidenceContext>(options =>
 {
-    string  connectionString = builder.Configuration.GetConnectionString("ConexHome");
+    string  connectionString = builder.Configuration.GetConnectionString("ConexNew");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
