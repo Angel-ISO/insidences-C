@@ -5,6 +5,8 @@ using Persistencia;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using InsidenceAPI.Dtos;
+using Microsoft.AspNetCore.Authorization;
+using IncidenceAPI.Helpers;
 
 namespace API.Controllers;
 
@@ -44,13 +46,14 @@ namespace API.Controllers;
           
     [HttpGet]
     [MapToApiVersion("1.1")]
-    //[Authorize(Roles  = "Administrador, Gerente")]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<PersonxIncidenceDto>>> Get11()
+    public async Task<ActionResult<Pager<PersonxIncidenceDto>>> Get11([FromQuery] Params personParams)
     {
-        var Con = await  _unitofwork.Persons.GetAllAsync();
-        return _mapper.Map<List<PersonxIncidenceDto>>(Con);
+        var Per = await  _unitofwork.Persons.GetAllAsync(personParams.PageIndex,personParams.PageSize,personParams.Search);
+        var lstPerson = _mapper.Map<List<PersonxIncidenceDto>>(Per.registros);
+        return new Pager<PersonxIncidenceDto>(lstPerson,Per.totalRegistros,personParams.PageIndex,personParams.PageSize,personParams.Search);
     }
 
 

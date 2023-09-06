@@ -19,7 +19,13 @@ builder.Services.AddControllers( options => {
     options.RespectBrowserAcceptHeader = true;
     options.ReturnHttpNotAcceptable=true;
 }).AddXmlSerializerFormatters();
+
+
+/*
+ el context accessor nos permite que podamos implementar la autorizacion de roles
+*/
 builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddControllers();
 builder.Services.AddAutoMapper(Assembly.GetEntryAssembly());
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -47,7 +53,7 @@ builder.Services.AddAuthorization(opts =>{
 
 builder.Services.AddDbContext<IncidenceContext>(options =>
 {
-    string  connectionString = builder.Configuration.GetConnectionString("ConexHome");
+    string  connectionString = builder.Configuration.GetConnectionString("ConexNew");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 

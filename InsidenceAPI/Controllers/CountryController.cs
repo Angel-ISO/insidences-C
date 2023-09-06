@@ -13,6 +13,7 @@ namespace API.Controllers;
 
 [ApiVersion("1.0")]
 [ApiVersion("1.1")]
+[Authorize]
  public class CountryController : BaseApiController
 {
 
@@ -45,7 +46,6 @@ namespace API.Controllers;
         
     [HttpGet]
     [MapToApiVersion("1.1")]
-    [Authorize]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<Pager<CountryXRegDto>>> Get11([FromQuery] Params countryParams)
