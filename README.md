@@ -38,7 +38,7 @@ dotnet ef database update --project ./Persistencia/ --startup-project ./Insidenc
 
 
 
-![base de datos](/Media/ModeloBasesDeDatos.PNG)
+![base de datos](/Media/db%20.png)
 
 #### En caso de que base de datos no se pueda visualizar en su entorno, cabe resaltar que necesita tener en su sistema la librería de herramientas de .net-ef la cual se instala con el siguiente comando (asegúrese de salir del proyecto y ejecutarlo de manera global en su ordenador)
 
@@ -116,7 +116,36 @@ y consecutivamente se podra observar la relacion en nuestra tabla intermedia de 
 
 ![tabla intermedia](/Media/relacion%20rol.PNG)
 
+# Creacion jwt en el proyecto
 
+El proyecto cuenta con que al momento de ser registrado se genera un token de seguridad 
+para  que el usuario tenga un registro unico.
+
+![creacion jwt](/Media/relacion%20rol.PNG)
+
+
+## autorizacion por usuario
+
+es muy importante identificar el rol que nuestro usuario desempeña en la compañia. Por lo tanto debemos generar una autorizacion por rol y dependiendo del rol se verifique y restringir las acciones a determinados usuarios por medio de su rol.
+
+## gerente vs camper
+
+veremos como el gerente tiene permisos que a diferencia del rol camper. No se le pueden conceder
+
+
+
+## gerente 
+
+![creacion jwt](/Media/creacion+token.png)
+
+
+veremos como puede realizar las peticiones sin ningun tipo de problema
+
+## camper
+
+![creacion jwt](/Media/tokennopermitido+creacion.png)
+
+en este caso el camper no tiene permitido realizar esta peticion por lo tanto la solicitud se cancela e invalida.
 
 
 Cabe aclarar que el proyecto no está 100% culminado. Estar atento a esta documentación que será paulatinamente actualizada faltando añadir autenticaciones y encriptamiento de validaciones para mayor proteccion del mismo🤗.
