@@ -29,18 +29,10 @@ builder.Services.ConfigureCors();
 builder.Services.AddAplicationService();
 builder.Services.ConfigureRateLimiting();
 builder.Services.ConfigureApiVersioning();
+builder.Services.AddJwt(builder.Configuration);
 
 
 
-var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context"));
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>{
-    opt.TokenValidationParameters = new TokenValidationParameters{
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = key,
-        ValidateAudience = false,
-        ValidateIssuer = false
-    };
-});
 
 
 builder.Services.AddAuthorization(opts =>{
@@ -55,7 +47,7 @@ builder.Services.AddAuthorization(opts =>{
 
 builder.Services.AddDbContext<IncidenceContext>(options =>
 {
-    string  connectionString = builder.Configuration.GetConnectionString("ConexNew");
+    string  connectionString = builder.Configuration.GetConnectionString("ConexHome");
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 

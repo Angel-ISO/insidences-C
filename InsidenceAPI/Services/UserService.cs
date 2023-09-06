@@ -156,35 +156,47 @@ public class UserService : IUserService
 
     }
 
-    private JwtSecurityToken CreateJwtToken(User usuario)
+  private JwtSecurityToken CreateJwtToken(User usuario)
+{
+    if (usuario == null)
     {
-        var roles = usuario.Rols;
-        var roleClaims = new List<Claim>();
-        foreach (var role in roles)
-        {
-            roleClaims.Add(new Claim("roles", role.Name_Rol));
-        }
-        var claims = new[]
-        {
-                new Claim(JwtRegisteredClaimNames.Sub, usuario.Name_User),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim("uid", usuario.Id.ToString())
-        }
-        .Union(roleClaims);
-
-        var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.Key));
-        Console.WriteLine("", symmetricSecurityKey);
-
-        var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
-        var JwtSecurityToken = new JwtSecurityToken(
-            issuer: _jwt.Issuer,
-            audience: _jwt.Audience,
-            claims: claims,
-            expires: DateTime.UtcNow.AddMinutes(_jwt.DurationInMinutes),
-            signingCredentials: signingCredentials);
-
-        return JwtSecurityToken;
+        throw new ArgumentNullException(nameof(usuario), "El usuario no puede ser nulo.");
     }
+
+    var roles = usuario.Rols;
+    var roleClaims = new List<Claim>();
+    foreach (var role in roles)
+    {
+        roleClaims.Add(new Claim("roles", role.Name_Rol));
+    }
+    
+    var claims = new[]
+    {
+        new Claim(JwtRegisteredClaimNames.Sub, usuario.Name_User),
+        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+        new Claim("uid", usuario.Id.ToString())
+    }
+    .Union(roleClaims);
+
+    if (string.IsNullOrEmpty(_jwt.Key) || string.IsNullOrEmpty(_jwt.Issuer) || string.IsNullOrEmpty(_jwt.Audience))
+    {
+        throw new ArgumentNullException("La configuración del JWT es nula o vacía.");
+    }
+
+    var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.Key));
+
+    var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
+    
+    var JwtSecurityToken = new JwtSecurityToken(
+        issuer: _jwt.Issuer,
+        audience: _jwt.Audience,
+        claims: claims,
+        expires: DateTime.UtcNow.AddMinutes(_jwt.DurationInMinutes),
+        signingCredentials: signingCredentials);
+
+    return JwtSecurityToken;
+}
+
 
     /*public async Task<LoginDto>  UserLogin(LoginDto model)
     {

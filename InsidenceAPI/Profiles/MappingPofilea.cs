@@ -16,9 +16,10 @@ namespace InsidenceAPI.Profiles;
         CreateMap<City, CityDto>().ReverseMap();
         CreateMap<Person, PersonDto>().ReverseMap();
         CreateMap<Incidence, IncidenceDto>().ReverseMap();
+        CreateMap<Rol, Rol>().ReverseMap();
 
 
-
+        CreateMap<Rol, RolxPersonDto>().ReverseMap();
         CreateMap<Person, PersonxIncidenceDto>().ReverseMap();
         CreateMap<Region, RegionxCityDto>().ReverseMap();
         CreateMap<Country, CountryXRegDto>().ReverseMap();

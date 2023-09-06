@@ -8,6 +8,7 @@ using InsidenceAPI.Dtos;
 using Microsoft.AspNetCore.Authorization;
 using  InsidenceAPI.Helpers;
 using static InsidenceAPI.Helpers.Autorizacion;
+using IncidenceAPI.Helpers;
 namespace API.Controllers;
 
 [ApiVersion("1.0")]
@@ -47,10 +48,11 @@ namespace API.Controllers;
     [Authorize]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<ActionResult<IEnumerable<CountryXRegDto>>> Get11()
+    public async Task<ActionResult<Pager<CountryXRegDto>>> Get11([FromQuery] Params countryParams)
     {
-        var Con = await  _unitofwork.Countries.GetAllAsync();
-        return _mapper.Map<List<CountryXRegDto>>(Con);
+        var Con = await  _unitofwork.Countries.GetAllAsync(countryParams.PageIndex,countryParams.PageSize,countryParams.Search);
+        var lstCountry = _mapper.Map<List<CountryXRegDto>>(Con.registros);
+        return new Pager<CountryXRegDto>(lstCountry,Con.totalRegistros,countryParams.PageIndex,countryParams.PageSize,countryParams.Search);
     }
 
 
