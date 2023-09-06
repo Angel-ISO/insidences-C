@@ -121,7 +121,7 @@ y consecutivamente se podra observar la relacion en nuestra tabla intermedia de 
 El proyecto cuenta con que al momento de ser registrado se genera un token de seguridad 
 para  que el usuario tenga un registro unico.
 
-![creacion jwt](/Media/relacion%20rol.PNG)
+![creacion jwt](/Media/tokenCreacion.PNG)
 
 
 ## autorizacion por usuario
